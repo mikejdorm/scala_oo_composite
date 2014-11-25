@@ -1,0 +1,10 @@
+Excellent use of Scala's trait system. Really went above and beyond here. You
+could probably use runtime function polymorphism (in combination with the way
+you're using traits) to avoid the pattern-matching in the PricingVisitor...but
+the way you do it isn't too bad. Using polymorphism there would prevent you from
+having to add cases when you add new Leaves or non-top-level composites, though,
+which would certainly be convenient.
+
+10/10
+
+Sean

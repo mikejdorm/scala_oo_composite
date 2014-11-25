@@ -1,0 +1,34 @@
+Author: Michael Dorman
+Lab 1 Deliverable
+May 7, 2013
+
+Building and Running
+My lab 1 deliverable is programmed in Scala. The code can be compiled and run with the following 
+instructions using Scala version 2.9.x.
+
+cd to the cspp51050 directory with the source files and execute:
+	scalac *.scala
+
+After compilation in the same directory as the source files execute the following:
+	scala cspp51050.Main -classpath cspp51050
+
+Design Decisions:
+I wasn't quite sure on the relationship between the Portfolio and Account classes. I think these
+objects can be interpreted in a few different ways. For example, a portfolio can be interpreted
+as a collection of accounts, a collection or portfolios, or a collection of security positions. 
+I think an account can also be interpreted this way depending on the context. So a private account
+owned by an individual is likely to hold just security positions. However, a institutional account
+may be a collection of portfolios or private accounts, and a firm account may be a collection of
+just about anything. Because I believe the definition of an account or a portfolio depends on it's 
+context, I implemented abstract portfolio and account trait types. These type traits are parameterized
+with the type of collection that should be held. So the PrivateAccount implmentation is parameterized
+with the SecurityPosition class since it's an account that holds securities. I included a few of these
+implementations within the program to demonstrate this design choice. I think it allows some freedom
+in representing many different types of accounts and portfolios and also allows for recurive definitions
+such as an Account that is a collection of accounts. This is also based on my past experiences with
+working on a legacy account maintenance system. A frequent issue was that the system was not able
+to have a main account that functioned as an umbrella for multiple accounts. This caused alot of 
+headaches. 
+
+
+
